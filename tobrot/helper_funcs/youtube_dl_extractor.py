@@ -48,7 +48,7 @@ async def extract_youtube_dl_formats(url, user_working_dir):
     if e_response:
         # logger.warn("Status : FAIL", exc.returncode, exc.output)
         error_message = e_response.replace(
-            "please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.", ""
+            "Please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.", ""
         )
         return error_message, None
     if t_response:
