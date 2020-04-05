@@ -39,7 +39,7 @@ async def youtube_dl_call_back(bot, update):
     if current_user_id != current_touched_user_id:
         await bot.answer_callback_query(
             callback_query_id=update.id,
-            text="who are you? 🤪🤔🤔🤔",
+            text="Itx Not Your Requested Link",
             show_alert=True,
             cache_time=0
         )
@@ -87,20 +87,20 @@ async def youtube_dl_call_back(bot, update):
     if "noyes.in" in youtube_dl_url or "tor.checker.in" in youtube_dl_url:
         await bot.edit_message_text(
             chat_id=update.message.chat.id,
-            text="😡😡 <i>please do not abuse this <u>FREE</u> service</i> 🌚",
+            text="😡😡 <i>Please do not abuse this <u>FREE</u> service</i> 🌚",
             message_id=update.message.message_id
         )
         return
     if "drive.google.com" in youtube_dl_url and youtube_dl_format != "source":
         await bot.edit_message_text(
             chat_id=update.message.chat.id,
-            text="<i>please do not abuse this <u>FREE</u> service</i>",
+            text="<i>Please do not abuse this <u>FREE</u> service</i>",
             message_id=update.message.message_id
         )
         return
     #
     await bot.edit_message_text(
-        text="trying to download",
+        text="Trying to Download ⬇️",
         chat_id=update.message.chat.id,
         message_id=update.message.message_id
     )
@@ -173,7 +173,7 @@ async def youtube_dl_call_back(bot, update):
     t_response = stdout.decode().strip()
     # LOGGER.info(e_response)
     # LOGGER.info(t_response)
-    ad_string_to_replace = "please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output."
+    ad_string_to_replace = "Please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output."
     if e_response and ad_string_to_replace in e_response:
         error_message = e_response.replace(ad_string_to_replace, "")
         await bot.edit_message_text(
